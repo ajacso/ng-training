@@ -8,6 +8,7 @@ import {
   RegistrationComponent,
   UserService
 } from './user.barrel';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {
   ],
   declarations: [
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    UserComponent
   ],
   providers: [
     UserService

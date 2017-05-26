@@ -1,0 +1,14 @@
+<h3>
+  My Profile
+  <img *ngIf="loading" src="assets/loader.gif">
+</h3>
+<ul>
+  <body>
+    <h4>Name: {{_authService.user.name}}</h4>
+    <h4>Email: {{_authService.user.email}}</h4>
+    <h4>Created at: {{_authService.user.created_at}}</h4>
+    <h4>Updated at: {{_authService.user.updated_at}}</h4>
+  </body>
+</ul>
+
+<button type="button" class="btn btn-default" (click)="updatePassword()" [disabled]="loading">Update password to "1cellmobilsoft"</button>

@@ -11,7 +11,6 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
   { path: 'user', loadChildren: 'app/user/user.module#UserModule' },
-  { path: 'profile', loadChildren: 'app/profile/profile.module#ProfileModule' },
   { path: 'task', loadChildren: 'app/task/task.module#TaskModule', canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];

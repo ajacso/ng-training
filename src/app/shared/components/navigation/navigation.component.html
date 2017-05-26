@@ -28,7 +28,7 @@
         <li *ngIf="!!authService.user">
           <div>
             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-            <a [routerLink]="['/profile']">{{authService.user.name}}</a>
+            <a [routerLink]="['/user/' + authService.user.id]">{{authService.user.name}}</a>
           </div>
         </li>
         <li *ngIf="!!authService.user">

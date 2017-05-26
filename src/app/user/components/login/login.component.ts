@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   public ngOnInit() {
+    //console.log(this.user);
     this.loading = false;
   }
 
