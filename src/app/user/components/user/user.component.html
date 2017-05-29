@@ -1,14 +1,26 @@
-<h3>
+<h2>
   My Profile
-  <img *ngIf="loading" src="assets/loader.gif">
-</h3>
-<ul>
-  <body>
-    <h4>Name: {{_authService.user.name}}</h4>
-    <h4>Email: {{_authService.user.email}}</h4>
-    <h4>Created at: {{_authService.user.created_at}}</h4>
-    <h4>Updated at: {{_authService.user.updated_at}}</h4>
-  </body>
-</ul>
-
-<button type="button" class="btn btn-default" (click)="updatePassword()" [disabled]="loading">Update password to "1cellmobilsoft"</button>
+</h2>
+<h3>User details</h3>
+<h4>Name: {{_authService.user.name}}<h4>
+<h4>Email: {{_authService.user.email}}<h4>
+<h4>Created at: {{_authService.user.created_at}}<h4>
+<h4>Updated at: {{_authService.user.updated_at}}<h4>
+<h3>Password update</h3>
+<form [formGroup]="form" (ngSubmit)="updatePassword()">
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input formControlName="password" type="password" class="form-control" [(ngModel)]="user.password">
+    <div *ngIf="!form.controls.password.valid && !form.controls.password.pristine " class="alert alert-danger">
+      Password is required and should be at least 6 characters long!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password (confirm)</label>
+    <input formControlName="passwordConfirm" type="password" class="form-control">
+    <div *ngIf="!form.controls.passwordConfirm.valid && !form.controls.passwordConfirm.pristine " class="alert alert-danger">
+      Password is required and should be at least 6 characters long!
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid || loading">Update password</button>
+</form>

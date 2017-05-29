@@ -21,13 +21,13 @@ export class UserService {
     );
   }
 
-  public update(user: User, responseConfig: ApiResponseConfig): void {
-    console.log();
+  public updatePassword(user: User, responseConfig: ApiResponseConfig): void {
+    console.log(user);
     this._apiService.request(
       {
         method: 'Patch',
         url: 'user/' + this._authService.user.id,
-        body: 'password: "1cellmobilsoft"',
+        body: user,
       },
       responseConfig
     )
