@@ -22,7 +22,6 @@ export class UserService {
   }
 
   public updatePassword(user: User, responseConfig: ApiResponseConfig): void {
-    console.log(user);
     this._apiService.request(
       {
         method: 'Patch',

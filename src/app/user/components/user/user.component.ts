@@ -22,7 +22,6 @@ export class UserComponent implements OnInit {
   public constructor(private _authService: AuthService, private _userService: UserService) { }
 
   ngOnInit() {
-    //console.log(this._authService.user);
     this.loading = false;
   }
 
@@ -32,17 +31,13 @@ export class UserComponent implements OnInit {
     this.user,
     {
         success:
-        //updatedPassword => user = updatedPassword,
         (updatedPassword: Response) => {
-        //console.log(response);
-        window.alert('Password updated!');
-        this.user = new User();
-        this.form.reset();
-        this.loading = false;
+          window.alert('Password updated!');
+          this.user = new User();
+          this.form.reset();
+          this.loading = false;
       },
         error: error => window.alert('Update failed.'),
-        //this.onError.emit(),
-        //finally: () => this.loading = false
       }
     )
   }
